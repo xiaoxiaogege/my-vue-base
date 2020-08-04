@@ -1,0 +1,7 @@
+公共组件-》loadding
+
+挂载在vue的实例上，并注册为全局组件
+
+使用方法：
+const loading = this.$loading()  //获取loading 的实例
+loading.close() //调用关闭的方法

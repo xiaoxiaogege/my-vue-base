@@ -1,0 +1,332 @@
+//flex布局
+.p-flex {
+  display: flex;
+}
+//======容器的属性  运用在容器上========
+//主轴的方向
+.p-fd-rr {
+  flex-direction: row-reverse;
+}
+.p-fd-c {
+  flex-direction: column;
+}
+.p-fd-cr {
+  flex-direction: column-reverse;
+}
+
+// 主轴轴线
+.p-fw-w {
+  flex-wrap: wrap;
+}
+.p-fw-wr {
+  flex-wrap: wrap-reverse;
+}
+
+// 主轴上的对齐方式
+.p-jc-c {
+  justify-content: center;
+}
+.p-jc-sb {
+  justify-content: space-between;
+}
+.p-jc-sa {
+  justify-content: space-around;
+}
+.p-jc-fs {
+  justify-content: flex-start; //（默认值）：左对齐
+}
+.p-jc-fe {
+  justify-content: flex-end;
+}
+// 交叉轴上对齐方式， stretch 默认值将占满整个容器的高度
+.p-ai-c {
+  align-items: center;
+}
+.p-ai-fs {
+  align-items: flex-start;
+}
+.p-ai-fe {
+  align-items: flex-end;
+}
+.p-ai-b {
+  align-items: baseline; // 项目的第一行文字的基线对齐
+}
+
+//定义了多根轴线的对齐方式
+
+//======项目的属性  运用在项目上======
+// 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性
+.p-as-fs {
+  align-self: flex-start;
+}
+.p-as-fe {
+  align-self: flex-end;
+}
+.p-as-c {
+  align-self: center;
+}
+//flex 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选
+.p-f-1 {
+  flex: 1;
+}
+.p-f-2 {
+  flex: 2;
+}
+.p-f-3 {
+  flex: 3;
+}
+.p-f-a {
+  flex: auto; //(1 1 auto)
+}
+.p-f-n {
+  flex: none; //(0 0 auto)
+}
+// 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小，为0 表示不缩小
+.p-fs-0 {
+  flex-shrink: 0;
+}
+
+//圆角
+.p-br-8 {
+  border-radius: 8rpx;
+}
+
+.p-br-20 {
+  border-radius: 20px;
+}
+
+.p-br-50 {
+  border-radius: 50%;
+}
+
+// 常用内外边距
+.p-m-20 {
+  margin: 20px;
+}
+.p-m-tb-20 {
+  margin: 20px 0;
+}
+.p-m-lr-20 {
+  margin: 0 20px;
+}
+
+.p-mt-20 {
+  margin-top: 20px;
+}
+
+.p-mr-20 {
+  margin-right: 20px;
+}
+
+.p-mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-ml-20 {
+  margin-left: 20px;
+}
+
+.p-m-10 {
+  margin: 10px;
+}
+.p-m-tb-10 {
+  margin: 10px 0;
+}
+.p-m-lr-10 {
+  margin: 0 10px;
+}
+
+.p-mt-10 {
+  margin-top: 10px;
+}
+
+.p-mr-10 {
+  margin-right: 10px;
+}
+
+.p-mb-10 {
+  margin-bottom: 10px;
+}
+
+.p-ml-10 {
+  margin-left: 10px;
+}
+
+.p-p-20 {
+  padding: 20px;
+}
+.p-p-tb-20 {
+  padding: 20px 0;
+}
+.p-p-lr-20 {
+  padding: 0 20px;
+}
+
+.p-pt-20 {
+  padding-top: 20px;
+}
+
+.p-pr-20 {
+  padding-right: 20px;
+}
+
+.p-pb-20 {
+  padding-bottom: 20px;
+}
+
+.p-pl-20 {
+  padding-left: 20px;
+}
+
+.p-p-10 {
+  padding: 10px;
+}
+.p-p-tb-10 {
+  padding: 10px 0;
+}
+.p-p-lr-10 {
+  padding: 0 10px;
+}
+
+.p-pt-10 {
+  padding-top: 10px;
+}
+
+.p-pr-10 {
+  padding-right: 10px;
+}
+
+.p-pb-10 {
+  padding-bottom: 10px;
+}
+
+.p-pl-10 {
+  padding-left: 10px;
+}
+
+//定位
+.p-p-r {
+  position: relative;
+}
+
+.p-p-a {
+  position: absolute;
+}
+
+.p-p-f {
+  position: fixed;
+}
+
+.p-fixed-t {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.p-fixed-b {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+//文本对齐方式
+.p-ta-c {
+  text-align: center;
+}
+
+.p-ta-l {
+  text-align: left;
+}
+
+.p-ta-r {
+  text-align: right;
+}
+
+//文本粗体
+.p-fw-b {
+  font-weight: bold;
+}
+
+.p-fw-n {
+  font-weight: normal;
+}
+
+// 常用旋转角度
+.p-rotate180 {
+  transform: rotate(180deg);
+}
+
+.p-rotate90 {
+  transform: rotate(90deg);
+}
+
+.p-rotate45 {
+  transform: rotate(45deg);
+}
+
+// 显示隐藏
+.p-hide {
+  display: none !important;
+}
+
+.p-show {
+  display: block !important;
+}
+
+// 单行溢出...
+.p-over1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 可用于多行溢出...   需指定行数， 如 2 行溢出 ， 则需要加上 p-overflow2 类   如：class="p-overflow p-overflow2"
+.p-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.p-overflow1 {
+  -webkit-line-clamp: 1;
+}
+
+.p-overflow2 {
+  -webkit-line-clamp: 2;
+}
+
+/* 0.5PX 下边框线条 */
+.p-bor-bottom:before {
+  width: 200%;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #ccc;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.p-input {
+  border: 1px solid #eee;
+  border-radius: 20px;
+  background: #fff;
+  padding: 0 18rpx;
+}
+
+.p-cursor {
+  cursor: pointer;
+}
