@@ -1,6 +1,6 @@
 'use strict'
-import axios from 'axios'
 import router from '@/router'
+import axios from 'axios'
 // import { Message } from "element-ui";
 
 /**弹窗提示 */
@@ -33,38 +33,41 @@ const toLogin = () => {
 const errorHandle = (status, other) => {
   // 状态码判断
   switch (status) {
-    // 401: 未登录状态，或者登录过去，跳转登录页
-    case 401:
-      tip('登录过期，请重新登录')
-      toLogin()
-      break
+  // 401: 未登录状态，或者登录过去，跳转登录页
+  case 401:
+    tip('登录过期，请重新登录')
+    toLogin()
+    break
     // 403 token过期
     // 清除token并跳转登录页
-    case 403:
-      tip('没有权限访问，请联系管理员')
-      localStorage.removeItem('token')
-      setTimeout(() => {
-        toLogin()
-      }, 1000)
-      break
+  case 403:
+    tip('没有权限访问，请联系管理员')
+    localStorage.removeItem('token')
+    setTimeout(() => {
+      toLogin()
+    }, 1000)
+    break
     // 404请求不存在
-    case 404:
-      tip('请求的资源不存在')
-      break
-    case 500:
-      tip('服务器错误！')
-      break
-    case 503:
-      tip('服务器暂时无法处理请求')
-      break
-    default:
-      console.log(other)
+  case 404:
+    tip('请求的资源不存在')
+    break
+  case 500:
+    tip('服务器错误！')
+    break
+  case 503:
+    tip('服务器暂时无法处理请求')
+    break
+  default:
+    console.log(other)
   }
 }
 
+console.log('base url', process.env.VUE_APP_BASE_URL)
+
 // 创建axios实例
 var instance = axios.create({
-  timeout: 1000 * 60
+  timeout: 1000 * 60,
+  baseURL: process.env.VUE_APP_BASE_URL
 })
 // 设置post请求头
 instance.defaults.headers.post['Content-Type'] =

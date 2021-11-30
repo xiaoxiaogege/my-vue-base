@@ -6,10 +6,23 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapMutations } from 'vuex'
+import storage from '@/utils/localstorage.js'
+import { mapActions, mapMutations, mapState } from 'vuex'
+import { queryList, restfulList } from '../api/dome'
 export default {
-  mounted() {
+  mounted () {
     this.queryDome()
+    queryList().then(res => {
+      console.log('list', res)
+    })
+    restfulList().then(res=>{
+      console.log('restfulList', res)
+    })
+    storage.setItem('a','123',3000)
+    console.log('get storage===1',storage.getItem('a'))
+    setTimeout(()=>{
+      console.log('get storage===2',storage.getItem('a'))
+    },4000)
   },
   computed: {
     // 写法一 官方推荐

@@ -20,10 +20,10 @@ const domeBase = base.hmallAPI
 const apiList = {
   //接口方法....
   // 例如下
-  dome21(data) {
+  dome21 (data) {
     return axios.post(`${domeBase}/dome/dome`, data, {})
   },
-  dome22(params) {
+  dome22 (params) {
     return axios.get(`${domeBase}/dome/dome`, { params })
   }
 }
