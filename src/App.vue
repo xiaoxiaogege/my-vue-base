@@ -9,6 +9,10 @@
 </template>
 
 <style lang="less">
+@import 'style/reset';
+@import 'style/common';
+@import 'style/flex';
+@import 'style/theme';
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

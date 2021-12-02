@@ -1,6 +1,13 @@
-const localPrefix = process.env.VUE_APP_STORAGE_PREFIX
-console.log('localPrefix', localPrefix)
+const localPrefix = process.env.VUE_APP_STORAGE_PREFIX || '' //配置统一的前缀
 const ls = window.localStorage
+
+const CryptoJS = require('crypto-js')
+// const secretKey = 'secret key 123'
+const secretKey = CryptoJS.enc.Utf8.parse('cmp_security_key')
+const options = {
+  mode: CryptoJS.mode.ECB,
+  padding: CryptoJS.pad.Pkcs7
+}
 
 // 设置
 const setItem = (key, val, expired) => {
@@ -12,7 +19,13 @@ const setItem = (key, val, expired) => {
     if (expired) {
       data[`__${key}__expired`] = Date.now() + expired
     }
-    ls.setItem(localPrefix + key, JSON.stringify(data))
+    // Encrypt
+    var ciphertext = CryptoJS.AES.encrypt(
+      JSON.stringify(data),
+      secretKey,
+      options
+    ).toString()
+    ls.setItem(localPrefix + key, ciphertext)
   } catch (e) {
     console.log('setItem error', e)
   }
@@ -20,16 +33,21 @@ const setItem = (key, val, expired) => {
 // 获取
 const getItem = key => {
   try {
-    const data = JSON.parse(ls.getItem(localPrefix + key))
+    // Decrypt
+    const data = ls.getItem(localPrefix + key)
     if (!data) return
-    if (Object.prototype.hasOwnProperty.call(data, `__${key}__expired`)) {
-      if (data[`__${key}__expired`] >= Date.now()) {
-        return data[key]
+    var bytes = CryptoJS.AES.decrypt(data, secretKey,options)
+    var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
+    if (
+      Object.prototype.hasOwnProperty.call(decryptedData, `__${key}__expired`)
+    ) {
+      if (decryptedData[`__${key}__expired`] >= Date.now()) {
+        return decryptedData[key]
       }
       removeItem(key)
       return
     }
-    return data[key]
+    return decryptedData[key]
   } catch (e) {
     console.log('getItem error', e)
   }

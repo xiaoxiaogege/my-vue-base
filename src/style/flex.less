@@ -1,0 +1,106 @@
+//flex布局
+.p-flex {
+  display: flex;
+}
+//======容器的属性  运用在容器上========
+//主轴的方向
+.p-fd-r {
+  flex-direction: row; //默认值
+}
+.p-fd-rr {
+  flex-direction: row-reverse;
+}
+.p-fd-c {
+  flex-direction: column;
+}
+.p-fd-cr {
+  flex-direction: column-reverse;
+}
+
+// 主轴轴线
+.p-fw-n {
+  flex-wrap: nowrap; // 默认值
+}
+.p-fw-w {
+  flex-wrap: wrap;
+}
+.p-fw-wr {
+  flex-wrap: wrap-reverse;
+}
+
+// 主轴上的对齐方式
+.p-jc-fs {
+  justify-content: flex-start; //（默认值）：左对齐
+}
+.p-jc-fe {
+  justify-content: flex-end;
+}
+.p-jc-c {
+  justify-content: center;
+}
+.p-jc-sb {
+  justify-content: space-between;
+}
+.p-jc-sa {
+  justify-content: space-around;
+}
+
+// 交叉轴上对齐方式， stretch 默认值将占满整个容器的高度
+.p-ai-s {
+  align-items: stretch; //默认值将占满整个容器的高度
+}
+.p-ai-c {
+  align-items: center;
+}
+.p-ai-fs {
+  align-items: flex-start;
+}
+.p-ai-fe {
+  align-items: flex-end;
+}
+.p-ai-b {
+  align-items: baseline; // 项目的第一行文字的基线对齐
+}
+
+//定义了多根轴线的对齐方式
+.p-ac-fs{
+    align-content: flex-start;
+}
+.p-ac-fe{
+    align-content: flex-end;
+}
+.p-ac-c{
+    align-content: center;
+}
+.p-ac-s{
+    align-content: stretch;
+}
+.p-ac-sb{
+    align-content: space-between;
+}
+.p-ac-sa{
+    align-content: space-around;
+}
+
+//======项目的属性  运用在项目上======
+// 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性
+.p-o-1 {
+  order: -1;
+}
+//允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性
+.p-as-fs {
+  align-self: flex-start;
+}
+.p-as-fe {
+  align-self: flex-end;
+}
+.p-as-c {
+  align-self: center;
+}
+//flex 属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选
+.p-f-a {
+  flex: auto; //(1 1 auto)
+}
+.p-f-n {
+  flex: none; //(0 0 auto)
+}
